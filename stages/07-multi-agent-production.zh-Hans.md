@@ -259,7 +259,7 @@ Production agent 跑久了，**cost / latency 两条线会吃掉你大半预算�
 > - 每次 model upgrade → 跑内部 eval set 验证、不只看厂商公布的 benchmark 提升
 > - 接 [langfuse](https://github.com/langfuse/langfuse) / [promptfoo](https://github.com/promptfoo/promptfoo) 把 eval 自动化、每次 deploy 都跑
 
-> 📊 **observability 认一个可携标准 + 两个评估观念**：(1) **OpenTelemetry GenAI 惯例**（`gen_ai.*` semantic conventions）——langfuse / Arize Phoenix / Helicone 都吐 OTel-兼容 span，认这层才不被单一工具绑死；OTel-native 的 [Arize Phoenix](https://github.com/Arize-ai/phoenix)（★ 10k+）可看。(2) **pass^k**（同一题连对 k 次的概率 = 可靠度，不是只看过一次）+ [τ²-bench](https://github.com/sierra-research/tau2-bench)。(3) 多 agent 失败有现成词汇：**MAST**（[arXiv 2503.13657](https://arxiv.org/abs/2503.13657)、14 种失败模式分 3 类）。
+> 📊 **observability 认一个可携标准 + 两个评估观念**：(1) **OpenTelemetry GenAI 惯例**（`gen_ai.*` semantic conventions）——langfuse / Arize Phoenix / Helicone 都吐 OTel-兼容 span，认这层才不被单一工具绑死；OTel-native 的 [Arize Phoenix](https://github.com/Arize-ai/phoenix)（★ 11k+）可看。(2) **pass^k**（同一题连对 k 次的概率 = 可靠度，不是只看过一次）+ [τ²-bench](https://github.com/sierra-research/tau2-bench)。(3) 多 agent 失败有现成词汇：**MAST**（[arXiv 2503.13657](https://arxiv.org/abs/2503.13657)、14 种失败模式分 3 类）。
 
 ## 🎯 常用 Multi-Agent / Production 工具推荐（按用途分类）
 
