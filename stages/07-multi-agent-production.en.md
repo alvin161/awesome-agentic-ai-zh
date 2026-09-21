@@ -87,7 +87,7 @@ If not, go back and complete the previous stages. This stage is about "combining
 3. [**Anthropic — Message Batches API**](https://docs.anthropic.com/en/docs/build-with-claude/batch-processing) — Asynchronous batch jobs
 4. [**anthropics/courses — Prompt Evaluations**](https://github.com/anthropics/courses) ⭐⭐⭐⭐⭐ ★ 22k+ — Anthropic's official 5-course umbrella; **module 4 "Prompt Evaluations" maps to this stage's eval / observability section**. Jupyter notebooks covering systematic evaluation of prompt and agent behavior.
 5. **Documentation for any eval framework** — promptfoo, LangSmith, or weave
-6. [**ai-boost/awesome-harness-engineering**](https://github.com/ai-boost/awesome-harness-engineering) (★ 3.4k+) — A collection of tools / patterns / eval / memory / MCP / observability for agent harnesses
+6. [**ai-boost/awesome-harness-engineering**](https://github.com/ai-boost/awesome-harness-engineering) (★ 4.4k+) — A collection of tools / patterns / eval / memory / MCP / observability for agent harnesses
 7. [**ZhangHanDong/harness-engineering-from-cc-to-ai-coding**](https://github.com/ZhangHanDong/harness-engineering-from-cc-to-ai-coding) (★ 1.5k+) — Learning harness design from Claude Code's source code (in Chinese)
 
 ## 🏗 Harness Engineering — Engineering Design for a Production Agent Runtime ⭐ Core Concept of This Stage
@@ -259,7 +259,7 @@ This means that for numbers on the leaderboard like "Claude 87.6% / GPT 85.0%", 
 > - Every time a model is upgraded → run it against your internal eval set for validation, don't just look at the vendor's published benchmark improvements.
 > - Connect to [langfuse](https://github.com/langfuse/langfuse) / [promptfoo](https://github.com/promptfoo/promptfoo) to automate eval and run it with every deployment.
 
-> 📊 **For observability, learn one portable standard + two eval ideas**: (1) **OpenTelemetry GenAI conventions** (`gen_ai.*`): langfuse / Arize Phoenix / Helicone all emit OTel-compatible spans, so learning this layer keeps you from being locked to one tool; the OTel-native [Arize Phoenix](https://github.com/Arize-ai/phoenix) (★ 10k+) is worth a look. (2) **pass^k**: the probability of solving the same task k times in a row (reliability, not a single pass), measured by [τ²-bench](https://github.com/sierra-research/tau2-bench). (3) Multi-agent failures have a ready vocabulary: **MAST** ([arXiv 2503.13657](https://arxiv.org/abs/2503.13657), 14 failure modes in 3 categories).
+> 📊 **For observability, learn one portable standard + two eval ideas**: (1) **OpenTelemetry GenAI conventions** (`gen_ai.*`): langfuse / Arize Phoenix / Helicone all emit OTel-compatible spans, so learning this layer keeps you from being locked to one tool; the OTel-native [Arize Phoenix](https://github.com/Arize-ai/phoenix) (★ 11k+) is worth a look. (2) **pass^k**: the probability of solving the same task k times in a row (reliability, not a single pass), measured by [τ²-bench](https://github.com/sierra-research/tau2-bench). (3) Multi-agent failures have a ready vocabulary: **MAST** ([arXiv 2503.13657](https://arxiv.org/abs/2503.13657), 14 failure modes in 3 categories).
 
 ## 🎯 Recommended Tools for Multi-Agent / Production (by Use Case)
 
@@ -270,7 +270,7 @@ Don't know where to start choosing tools? Below are the common pairings in the i
 | **Writing your first multi-agent** (fastest to get started) | [crewAI](https://github.com/crewAIInc/crewAI) | Role-based, get it running in a few lines of code, straightforward production patterns |
 | **Want a group debate / brainstorm pattern** | [AutoGen](https://github.com/microsoft/autogen) | GroupChat for free-form debate, from Microsoft |
 | **Need an audit trail / checkpoint / human-in-the-loop for production** | [LangGraph](https://github.com/langchain-ai/langgraph) | State machine approach, most complete control |
-| **Standardizing eval** (a must for CI / regression) | [promptfoo](https://github.com/promptfoo/promptfoo) ⭐ | YAML config, cross-model comparison, ★ 23k+ |
+| **Standardizing eval** (a must for CI / regression) | [promptfoo](https://github.com/promptfoo/promptfoo) ⭐ | YAML config, cross-model comparison, ★ 25k+ |
 | **Eval + observability on the same platform** | [langfuse](https://github.com/langfuse/langfuse) ⭐ | OSS, tracing + eval + prompt mgmt, ★ 32k+ |
 | **Quick instrumentation without code changes** | [Helicone](https://github.com/Helicone/helicone) | Proxy-based, not tied to a framework |
 | **Entire stack is on LangChain** | [LangSmith](https://www.langchain.com/langsmith) (Commercial) | Official observability from LangChain |
@@ -297,7 +297,7 @@ Categorized by use case, a single table to get you started with 28 projects. **U
 | | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | ⭐⭐⭐⭐⭐ | Those who want a role-based assembly line | Role-based multi-agent (research → writer → reviewer), the simplest production pattern |
 | | [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) | ⭐⭐⭐⭐⭐ | Those needing an audit trail / checkpoint / human-in-the-loop | State machine approach, strongest for production control |
 | | [open-multi-agent/open-multi-agent](https://github.com/open-multi-agent/open-multi-agent) | ⭐⭐⭐⭐ | TypeScript users who want to compare dynamic planning against a fixed pipeline in one repo | A coordinator plans the task DAG at runtime and hands it to a scheduler; `runTeam()` plans from a goal while `runTasks()` runs an explicitly defined pipeline, so the two styles sit side by side. The three above are Python-ecosystem; this adds the TypeScript route. ★ 6.8k+, MIT |
-| **Eval Frameworks** | [promptfoo](https://github.com/promptfoo/promptfoo) ⭐ | ⭐⭐⭐⭐⭐ | To standardize the eval process, CI integration | YAML config, cross-model comparison. ★ 23k+, MIT |
+| **Eval Frameworks** | [promptfoo](https://github.com/promptfoo/promptfoo) ⭐ | ⭐⭐⭐⭐⭐ | To standardize the eval process, CI integration | YAML config, cross-model comparison. ★ 25k+, MIT |
 | | [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) | ⭐⭐⭐⭐ | For academic benchmarks (MMLU / HellaSwag / GSM8K) | Academic grade. ★ 13k+, MIT |
 | | [openai/evals](https://github.com/openai/evals) | ⭐⭐⭐⭐ | For OpenAI-specific evals / want to contribute upstream | ★ 19k+ |
 | **Observability** | [langfuse](https://github.com/langfuse/langfuse) ⭐ | ⭐⭐⭐⭐⭐ | For self-hosting production observability | OSS LangSmith alternative, traces + sessions + evals + prompt mgmt. ★ 32k+, MIT |
